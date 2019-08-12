@@ -1,17 +1,21 @@
 const NO_REMAINDER = 0;
-const FOO_NUMBER = 3;
-const BAR_NUMBER = 5;
-const FOO_STRING = 'Foo';
-const BAR_STRING = 'Bar';
+const FOO_BAR_NUMBERS = [3, 5];
+const FOO_BAR_STRINGS = ['Foo', 'Bar'];
 
 function compute(number) {
 	validate(number);
-	if (number % BAR_NUMBER === NO_REMAINDER) return BAR_STRING;
-	return (isDivisibleByFooNumber(number) && FOO_STRING) || number;
+	return getFooBarString(number) || number;
 }
 
-function isDivisibleByFooNumber(number) {
-	return number % FOO_NUMBER === NO_REMAINDER;
+function getFooBarString(number) {
+	for (let index in FOO_BAR_NUMBERS) {
+		if (isDivisible(number, FOO_BAR_NUMBERS[index]))
+			return FOO_BAR_STRINGS[index];
+	}
+}
+
+function isDivisible(dividend, divisor) {
+	return dividend % divisor === NO_REMAINDER;
 }
 
 function validate(parameter) {
