@@ -40,5 +40,10 @@ describe('FooBarQix', () => {
 		it('should return "Foo" if the number contains 3 only', () => {
 			expect(fooBarQix.compute(13)).to.equal('Foo');
 		});
+
+		it('should return "FooFoo" if the number is divisible by 3 and contains 3 only', () => {
+			expect(fooBarQix.compute(3)).to.equal('FooFoo');
+			expect(fooBarQix.compute(93)).to.equal('FooFoo');
+		});
 	});
 });

@@ -6,9 +6,8 @@ const FOO_BAR_QIX_STRINGS = ['Foo', 'Bar', 'Qix'];
 function compute(number) {
 	validate(number);
 	return (
-		buildFooBarQixString(number, containsNumber) ||
-		buildFooBarQixString(number, isDivisible) ||
-		number
+		buildFooBarQixString(number, isDivisible) +
+			buildFooBarQixString(number, containsNumber) || number
 	);
 }
 
