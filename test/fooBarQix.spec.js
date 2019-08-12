@@ -16,5 +16,9 @@ describe('FooBarQix', () => {
 			expect(fooBarQix.compute(6)).to.equal('Foo');
 			expect(fooBarQix.compute(9)).to.equal('Foo');
 		});
+
+		it('should return "Bar" if the number is divisble by 5 only', () => {
+			expect(fooBarQix.compute(10)).to.equal('Bar');
+		});
 	});
 });
