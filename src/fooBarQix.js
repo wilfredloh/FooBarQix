@@ -8,10 +8,12 @@ function compute(number) {
 }
 
 function getFooBarString(number) {
+	let result = '';
 	for (let index in FOO_BAR_NUMBERS) {
 		if (isDivisible(number, FOO_BAR_NUMBERS[index]))
-			return FOO_BAR_STRINGS[index];
+			result += FOO_BAR_STRINGS[index];
 	}
+	return result;
 }
 
 function isDivisible(dividend, divisor) {

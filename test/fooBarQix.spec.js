@@ -20,5 +20,9 @@ describe('FooBarQix', () => {
 		it('should return "Bar" if the number is divisble by 5 only', () => {
 			expect(fooBarQix.compute(10)).to.equal('Bar');
 		});
+
+		it('should return "FooBar" if the number is divisble by 3 and by 5 only', () => {
+			expect(fooBarQix.compute(60)).to.equal('FooBar');
+		});
 	});
 });
