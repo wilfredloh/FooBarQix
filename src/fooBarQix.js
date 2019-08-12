@@ -1,7 +1,7 @@
 const NO_REMAINDER = 0;
 const BLANK_STRING = '';
-const FOO_BAR_NUMBERS = [3, 5];
-const FOO_BAR_STRINGS = ['Foo', 'Bar'];
+const FOO_BAR_QIX_NUMBERS = [3, 5, 7];
+const FOO_BAR_QIX_STRINGS = ['Foo', 'Bar', 'Qix'];
 
 function compute(number) {
 	validate(number);
@@ -9,8 +9,8 @@ function compute(number) {
 }
 
 function buildDivisorString(number) {
-	return FOO_BAR_NUMBERS.map((fooBarNumber, index) => {
-		if (isDivisible(number, fooBarNumber)) return FOO_BAR_STRINGS[index];
+	return FOO_BAR_QIX_NUMBERS.map((fooBarNumber, index) => {
+		if (isDivisible(number, fooBarNumber)) return FOO_BAR_QIX_STRINGS[index];
 		else return BLANK_STRING;
 	}).join(BLANK_STRING);
 }
