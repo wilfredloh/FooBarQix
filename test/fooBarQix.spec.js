@@ -11,5 +11,10 @@ describe('FooBarQix', () => {
 			expect(() => fooBarQix.compute('1')).to.throw('"1" must be a number');
 			expect(() => fooBarQix.compute(true)).to.throw('"true" must be a number');
 		});
+
+		it('should return "Foo" if the number is divisble by 3 only', () => {
+			expect(fooBarQix.compute(6)).to.equal('Foo');
+			expect(fooBarQix.compute(9)).to.equal('Foo');
+		});
 	});
 });
