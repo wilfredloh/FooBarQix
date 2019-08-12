@@ -5,13 +5,18 @@ const FOO_BAR_QIX_STRINGS = ['Foo', 'Bar', 'Qix'];
 
 function compute(number) {
 	validate(number);
-	if (number.toString().includes(FOO_BAR_QIX_NUMBERS[0]))
-		return FOO_BAR_QIX_NUMBERS.map((fooBarNumber, index) => {
-			if (number.toString().includes(fooBarNumber))
-				return FOO_BAR_QIX_STRINGS[index];
-			else return BLANK_STRING;
-		}).join(BLANK_STRING);
-	return buildDivisorString(number) || number;
+	return buildDivisorString(number) || buildContainsString(number) || number;
+}
+
+function containsNumber(number, comparison) {
+	return number.toString().includes(comparison);
+}
+
+function buildContainsString(number) {
+	return FOO_BAR_QIX_NUMBERS.map((fooBarNumber, index) => {
+		if (containsNumber(number, fooBarNumber)) return FOO_BAR_QIX_STRINGS[index];
+		else return BLANK_STRING;
+	}).join(BLANK_STRING);
 }
 
 function buildDivisorString(number) {
