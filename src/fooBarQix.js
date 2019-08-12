@@ -5,25 +5,22 @@ const FOO_BAR_QIX_STRINGS = ['Foo', 'Bar', 'Qix'];
 
 function compute(number) {
 	validate(number);
-	return buildDivisorString(number) || buildContainsString(number) || number;
+	return (
+		buildFooBarQixString(number, containsNumber) ||
+		buildFooBarQixString(number, isDivisible) ||
+		number
+	);
+}
+
+function buildFooBarQixString(number, condition) {
+	return FOO_BAR_QIX_NUMBERS.map((fooBarNumber, index) => {
+		if (condition(number, fooBarNumber)) return FOO_BAR_QIX_STRINGS[index];
+		else return BLANK_STRING;
+	}).join(BLANK_STRING);
 }
 
 function containsNumber(number, comparison) {
 	return number.toString().includes(comparison);
-}
-
-function buildContainsString(number) {
-	return FOO_BAR_QIX_NUMBERS.map((fooBarNumber, index) => {
-		if (containsNumber(number, fooBarNumber)) return FOO_BAR_QIX_STRINGS[index];
-		else return BLANK_STRING;
-	}).join(BLANK_STRING);
-}
-
-function buildDivisorString(number) {
-	return FOO_BAR_QIX_NUMBERS.map((fooBarNumber, index) => {
-		if (isDivisible(number, fooBarNumber)) return FOO_BAR_QIX_STRINGS[index];
-		else return BLANK_STRING;
-	}).join(BLANK_STRING);
 }
 
 function isDivisible(dividend, divisor) {
