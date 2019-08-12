@@ -28,5 +28,13 @@ describe('FooBarQix', () => {
 		it('should return "Qix" if the number is divisble by 7 only', () => {
 			expect(fooBarQix.compute(14)).to.equal('Qix');
 		});
+
+		it('should return "FooQix" if the number is divisble by 3 and 7 only', () => {
+			expect(fooBarQix.compute(21)).to.equal('FooQix');
+		});
+
+		it('should return "BarQix" if the number is divisble by 5 and 7 only', () => {
+			expect(fooBarQix.compute(140)).to.equal('BarQix');
+		});
 	});
 });
