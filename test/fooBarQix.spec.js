@@ -83,6 +83,14 @@ describe('FooBarQix', () => {
 			it('should return "QixQix" if the number is divisible by 7 and contains 7 only', () => {
 				expect(fooBarQix.compute(7)).to.equal('QixQix');
 			});
+
+			it('should return "FooFooFoo" if the number is divisible by 3 contains 3 twice', () => {
+				expect(fooBarQix.compute(33)).to.equal('FooFooFoo');
+			});
+
+			it('should return "FooBarBar" if the number is divisible by 3 and 5 contains 5', () => {
+				expect(fooBarQix.compute(15)).to.equal('FooBarBar');
+			});
 		});
 	});
 });
