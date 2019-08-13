@@ -52,8 +52,8 @@ describe('FooBarQix', () => {
 				expect(fooBarQix.compute(17)).to.equal('Qix');
 			});
 
-			it('should return "FooBar" if the number contains 3 and 5 only', () => {
-				expect(fooBarQix.compute(53)).to.equal('FooBar');
+			it('should return "BarFoo" if the number contains 3 and 5 only', () => {
+				expect(fooBarQix.compute(53)).to.equal('BarFoo');
 			});
 
 			it('should return "FooQix" if the number contains 3 and 7 only', () => {

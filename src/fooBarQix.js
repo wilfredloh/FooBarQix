@@ -1,25 +1,41 @@
 const NO_REMAINDER = 0;
 const BLANK_STRING = '';
-const FOO_BAR_QIX_NUMBERS = [3, 5, 7];
-const FOO_BAR_QIX_STRINGS = ['Foo', 'Bar', 'Qix'];
+const FOO_BAR_QIX_NUMBER_MAP = {
+	3: 'Foo',
+	5: 'Bar',
+	7: 'Qix'
+};
 
 function compute(number) {
 	validate(number);
-	return (
-		buildFooBarQixString(number, isDivisible) +
-			buildFooBarQixString(number, containsNumber) || number
+	return buildDivisibleString(number) + buildContainsString(number) || number;
+}
+
+function computeFooBarQixStringOrBlank(number, fooBarQixNumber) {
+	if (isDivisible(number, fooBarQixNumber))
+		return FOO_BAR_QIX_NUMBER_MAP[fooBarQixNumber];
+	else return BLANK_STRING;
+}
+
+function buildContainsString(number) {
+	const numberString = number.toString();
+	const numberStringArray = numberString.split(BLANK_STRING);
+	const fooBarQixStringArray = numberStringArray.map(
+		digit => FOO_BAR_QIX_NUMBER_MAP[digit]
 	);
+	return fooBarQixStringArray.join(BLANK_STRING);
 }
 
-function buildFooBarQixString(number, condition) {
-	return FOO_BAR_QIX_NUMBERS.map((fooBarNumber, index) => {
-		if (condition(number, fooBarNumber)) return FOO_BAR_QIX_STRINGS[index];
-		else return BLANK_STRING;
-	}).join(BLANK_STRING);
+function buildDivisibleString(number) {
+	const fooBarQixNumberArray = getFooBarQixNumberArray();
+	const fooBarQixStringArray = fooBarQixNumberArray.map(fooBarQixNumber =>
+		computeFooBarQixStringOrBlank(number, fooBarQixNumber)
+	);
+	return fooBarQixStringArray.join(BLANK_STRING);
 }
 
-function containsNumber(number, comparison) {
-	return number.toString().includes(comparison);
+function getFooBarQixNumberArray() {
+	return Object.keys(FOO_BAR_QIX_NUMBER_MAP);
 }
 
 function isDivisible(dividend, divisor) {
