@@ -28,5 +28,8 @@ Write a program that only takes a number as input and returns either a number or
 |   9   |    Foo    | 9 is divisible by 3                                       |
 |  10   |    Bar    | 10 is divisible by 5                                      |
 |  13   |    Foo    | 13 contains "3"                                           |
+|  14   |    Qix    | 14 is divisible by 7                                      |
 |  15   | FooBarBar | 15 is divisible by 3, is divisible by 5, and contains "5" |
+|  17   |    Qix    | 17 contains "7"                                           |
 |  33   | FooFooFoo | 33 is divisible by 3, and contains "3" twice              |
+| 1357  | FooBarQix | 1357 contains "3", "5", and "7"                           |
