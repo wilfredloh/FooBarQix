@@ -2,7 +2,7 @@
 
 ## Overview
 
-Write a program that only takes a nunber as input and returns either a number or string as output. The output is a number equal to input if it does not follow any of the special rules defined below (e.g. input of 1 returns an output of 1), otherwise it returns a string as stated in the rules.
+Write a program that only takes a number as input and returns either a number or string as output. The output is a number equal to input if it does not follow any of the special rules defined below (e.g. input of 1 returns an output of 1); otherwise, it returns a string as stated in the rules.
 
 ## Rules
 
