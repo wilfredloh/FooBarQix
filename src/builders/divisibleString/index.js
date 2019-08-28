@@ -13,10 +13,11 @@ function computeFooBarQixStringOrBlank(number, fooBarQixNumber) {
 
 function build(number) {
     const fooBarQixNumberList = getFooBarQixNumberList();
-    const fooBarQixStringArray = fooBarQixNumberList.map(fooBarQixNumber =>
-        computeFooBarQixStringOrBlank(number, fooBarQixNumber)
-    );
-    return fooBarQixStringArray.join(BLANK_STRING);
+    return fooBarQixNumberList
+        .map(fooBarQixNumber =>
+            computeFooBarQixStringOrBlank(number, fooBarQixNumber)
+        )
+        .join(BLANK_STRING);
 }
 
 module.exports = {
